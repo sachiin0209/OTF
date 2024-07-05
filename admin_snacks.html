@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNACKS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .menu_heading {
+            font-family: 'Sacramento', cursive;
+            font-size: 80px;
+            text-align: center;
+            color: #fff;
+            background-color: #32502E;
+        }
+        
+h2{
+    color: #32502E;
+    font-size: 40px;
+}
+.box{
+    border: solid #32502E;
+    border-radius: 2%;
+    width: 700px;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    font-size:25px;
+    background-color: #c9e7a3;
+    /* rgb(173, 202, 160) */
+}
+.food_image{
+    width: 300px;
+    height: 200px;
+    padding: 5px;
+    margin-right: 100px;
+}
+.food_name{
+    font-size: px;
+    color:#32502E ;
+}
+
+    </style>
+    <style>
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+        
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        
+        .slider.round:before {
+          border-radius: 50%;
+        }
+        </style>
+
+    <script type="text/javascript">
+        var arrayOfItem = []
+
+        function showSnacks() {
+            
+            var data_file = "snacks.json";
+            var http_request = new XMLHttpRequest();
+            http_request.onreadystatechange = function () {
+                if (http_request.readyState == 4) {
+                    var obj = JSON.parse(http_request.responseText);
+                    for (var i = 0; i < obj.length; i++) {
+                        arrayOfItem[i] = obj[i]
+                        var div = document.createElement('div');
+                        div.className = 'box';
+                        div.innerHTML = '<img class="food_image" src="' + obj[i].image + '">' +
+                        '<div class="inner_box">' +
+                        '<h3 class="food_name">' + obj[i].name +"<br>availability"+ '</h3>' +
+                        '<label class="switch">' +
+                        '<input type="hidden" id="togglevalue" value="'+obj[i].availability+'">'+
+                        '<input type="checkbox" ' + (obj[i].availability === 'available' ? 'checked' : '') + ' onClick="toggleAvailability(' + i + ', this)">' +
+                        '<span class="slider round"></span>' +
+                        '</label>' +
+                        '</div>';
+                    
+
+                        document.getElementById('snack').appendChild(div);
+                    }
+                }
+            }
+            http_request.open("GET", data_file, true);
+            http_request.send();
+        }
+
+        function toggleAvailability(idx) {
+            arrayOfItem[idx].availability = !arrayOfItem[idx].availability;
+            document.getElementById('snack').innerHTML = '';
+            showSnacks();
+        }
+    </script>
+    
+
+<script>
+    function toggleAvailability(index, checkbox) {
+        let toggleval = document.getElementById('togglevalue').value;
+        if(toggleval=='available'){
+            document.getElementById('togglevalue').value='unavailable';
+            updateAvailability(index,"UnAvailable");    
+        } else {
+            document.getElementById('togglevalue').value='available';
+            updateAvailability(index,"available");
+        }
+        
+    }
+
+   function updateAvailability(index, newText) {
+    // Fetch the JSON file
+    fetch('snacks.json')
+        .then(response => response.json())
+        .then(data => {
+            // Check if the index is valid
+            if (index >= 0 && index < data.length) {
+                // Update the availability property at the specified index
+                data[index].availability = newText;
+
+                // Convert the updated data back to JSON string
+                const updatedData = JSON.stringify(data, null, 2);
+
+                // Log the updated data (you can replace this with your desired action)
+                console.clear();
+                console.log(updatedData);
+            } else {
+                console.log(`Invalid index: ${index}`);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing JSON:', error);
+        });
+}
+
+</script>
+
+</head>
+
+<body onload="showSnacks()">
+    <p class="menu_heading">Snacks</p>
+    <div class="box-container" id="snack" align="center">
+    </div>
+
+</body>
+
+</html>

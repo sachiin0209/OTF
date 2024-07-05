@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Indie+Flower&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <center>
+        <p id="heading">On Time Food</p>
+    </center>
+    <br><br>
+    <div id="formcss" style="width:600px; margin:0 auto;">
+        <form id="formm" name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate align="center"
+             method="post" ng-submit="submitForm()">
+            <br>
+            <p style="font-size: xx-large; color:#32502E ;">LOGIN HERE</p><BR>
+            <p style="font-size: xx-large; color:#32502E ;">Enter Your Details</p>
+            <br>
+            <p>Enter Name&nbsp;&nbsp;&nbsp;
+                <input type="text" name="name" ng-model="name" required>
+            </p> <br>
+            <p>Enter Password&nbsp;&nbsp;&nbsp;
+                <input type="password" name="password" ng-model="password" required>
+            </p> <br>
+            <input class="buttonz" type="submit" value="Submit"><br><br>
+        </form>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function ($scope, $http, $window) {
+            $scope.submitForm = function () {
+                if ($scope.name === 'Admin' && $scope.password === 'admin@123') {
+                    // Redirect to index.html for admin
+                    $window.location.href = "admin";
+                } else {
+                    // Check in the database for non-admin users
+                    $http.post('/login', { name: $scope.name, password: $scope.password })
+                        .then(function (response) {
+                            console.log(response);
+                            if (response.data === 'Not a user') {
+                                alert('You are not an existing user');
+                            } else if (response.data === 'Invalid Password') {
+                                alert('Invalid Password');
+                            } else {
+                                // Redirect to index.html for non-admin users
+                                $window.location.href = "index.html";
+                            }
+                        })
+                        .catch(function (error) {
+                            console.error('Error:', error);
+                            alert('An error occurred. Please try again.');
+                        });
+                }
+            };
+        });
+    </script>
+    
+</body>
+
+</html>

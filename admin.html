@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Order</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Shahaf MF', sans-serif;
+        background-image: url('BACKKGG.png');
+        background-size: contain;
+    }
+    .container {
+        text-align: center;
+        font-family: 'Shahaf MF', sans-serif;
+    }
+    .road-crew {
+        font-family: 'Road Crew Bold', sans-serif;
+        font-size: 100px;
+        margin: 0; /* Remove margin */
+    }
+    .delicious-fast {
+        font-size: 60px;
+    }
+    .oval-button {
+        font-size: 30px;
+        border-radius: 50px; /* Makes the button oval-shaped */
+        padding: 8px 20px; /* Adjust padding to fit the text */
+    }
+</style>
+<script>
+    function tomenu() {
+        window.location.href = "adminmenu";
+    }
+    function totakeaway() {
+        window.location.href = "take_away";
+    }
+</Script>
+</head>
+<body>
+<div class="container">
+    <p class="road-crew">On Time</p>
+    <p class="road-crew" style="margin-top: -10px;">Food</p>
+    <p class="road-crew delicious-fast">Delicious Fast Food</p>
+    <div>
+        <button class="oval-button" onclick="tomenu()">Browse Menu</button>
+        <button class="oval-button" onclick="totakeaway()">Ready to Eat</button>
+    </div>
+</div>
+</body>
+</html>

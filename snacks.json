@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Double Cheese Sandwich",
+    "image": "https://tse3.mm.bing.net/th?id=OIP.165xqs8nx6W_drbABvo7ygHaEK&pid=Api&P=0&h=180",
+    "price": 90,
+    "availability": "UnAvailable"
+  },
+  {
+    "name": "Sweet-Corn Sandwich",
+    "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2016/07/corn-capsicum-sandwich-recipe-1.jpg",
+    "price": 90,
+    "availability": "available"
+  },
+  {
+    "name": "Paneer Tikka Sandwich",
+    "image": "https://tse4.mm.bing.net/th?id=OIP.re2-OaszwSYntU7O6PYWRQHaH2&pid=Api&P=0&w=300&h=300",
+    "price": 100,
+    "availability": "available"
+  },
+  {
+    "name": "Mushroom Cheese Sandwich",
+    "image": "https://tse3.mm.bing.net/th?id=OIP.6N_xuS2xZAi14KvkzLcdPAHaE6&pid=Api&P=0&h=180",
+    "price": 100,
+    "availability": "available"
+  },
+  {
+    "name": "Bombay Grilled Sandwich",
+    "image": "https://tse4.mm.bing.net/th?id=OIP.lAxygStUaS_dgAq4kgSVUAHaFj&pid=Api&P=0&h=180",
+    "price": 70,
+    "availability": "available"
+  },
+  {
+    "name": "Chicken Tikka Sandwich",
+    "image": "https://images.kitchenstories.io/recipeImages/R1075-photo-final-4x3.jpg",
+    "price": 120,
+    "availability": "available"
+  },
+  {
+    "name": "Classic Chicken Club Sandwich",
+    "image": "https://realfood.tesco.com/media/images/RFO-1400x919-ChickenClubSandwich-0ee77c05-5a77-49ac-a3bd-4d45e3b4dca7-0-1400x919.jpg",
+    "price": 120,
+    "availability": "available"
+  },
+  {
+    "name": "Cheese Mayo Grilled Chicken Sandwich",
+    "image": "https://cdn.scrambledchefs.com/wp-content/uploads/2020/05/Grilled-Chicken-6-720x480.jpg",
+    "price": 110,
+    "availability": "available"
+  },
+  {
+    "name": "Burger",
+    "image": "/burger.jpg",
+    "price": 95,
+    "availability": "available"
+  },
+  {
+    "name": "Momos",
+    "image": "/momos.jpg",
+    "price": 70,
+    "availability": "available"
+  },
+  {
+    "name": "Classic French Fries",
+    "image": "https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/1771_sfs-french-fries-bandw-b-001-article",
+    "price": 130,
+    "availability": "available"
+  },
+  {
+    "name": "Masala French Fries",
+    "image": "https://tse1.mm.bing.net/th?id=OIP.MXmdqAu_zcX_ljQ8VXvqgwHaFu&pid=Api&P=0&h=180",
+    "price": 130,
+    "availability": "available"
+  },
+  {
+    "name": "Penne Alfredo Pasta (Small)",
+    "image": "https://thedefineddish.com/wp-content/uploads/2020/05/2020-04-24-00.56.20.jpg",
+    "price": 130,
+    "availability": "available"
+  },
+  {
+    "name": "Pink Sauce Pasta ",
+    "image": "https://iowagirleats.com/wp-content/uploads/2021/09/Pink-Sauce-Pasta-iowagirleats-Featured-srgb.jpg",
+    "price": 188,
+    "availability": "available"
+  },
+  {
+    "name": "Basil Sauce Pasta ",
+    "image": "https://tse3.mm.bing.net/th?id=OIP.LCHXOwU6Cji_TqoWDFarHwHaE8&pid=Api&P=0&h=180",
+    "price": 188,
+    "availability": "available"
+  },
+  {
+    "name": "Chilly Paneer Dry",
+    "image": "https://www.mydelicious-recipes.com/home/images/188_1200_1200/mydelicious-recipes-dry-chilli-paneer",
+    "price": 130,
+    "availability": "available"
+  },
+  {
+    "name": "Chilly Paneer Gravy",
+    "image": "https://i.ytimg.com/vi/qu_VRYQccOg/maxresdefault.jpg",
+    "price": 130,
+    "availability": "available"
+  },
+  {
+    "name": "Chilly Mushroom",
+    "image": "http://www.recipemasters.in/wp-content/uploads/2014/01/chilli-mushroom.jpg",
+    "price": 137,
+    "availability": "available"
+  },
+  {
+    "name": "Paneer Pizza ",
+    "image": "https://tse4.mm.bing.net/th?id=OIP.Wwn7tRvQ8qDQeE_hema9wQHaHa&pid=Api&P=0&h=180",
+    "price": 200,
+    "availability": "available"
+  },
+  {
+    "name": "Veg Crispy Roll",
+    "image": "https://i.ytimg.com/vi/kUaGj-IwUtA/maxresdefault.jpg",
+    "price": 106,
+    "availability": "available"
+  },
+  {
+    "name": "Mushroom 65",
+    "image": "https://i.pinimg.com/originals/2a/68/1a/2a681ab49783e54e16bee34408952e80.jpg",
+    "price": 140,
+    "availability": "available"
+  },
+  {
+    "name": "Honey Chilly Potato",
+    "image": "http://recipes.timesofindia.com/photo/52532656.cms",
+    "price": 188,
+    "availability": "available"
+  }
+]
